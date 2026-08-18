@@ -1,0 +1,22 @@
+CLASS zcl_exec_log DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+    INTERFACES: if_oo_adt_classrun.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS ZCL_EXEC_LOG IMPLEMENTATION.
+
+
+  METHOD if_oo_adt_classrun~main.
+
+    out->write( 'HOLA MUNDO' ).
+
+  ENDMETHOD.
+ENDCLASS.
