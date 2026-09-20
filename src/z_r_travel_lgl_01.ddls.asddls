@@ -2,7 +2,6 @@
 @EndUserText.label: 'Travel - Root Entity'
 @Metadata.ignorePropagatedAnnotations: true
 define root view entity Z_R_TRAVEL_LGL_01
-
   as select from ztravel_lgl_01
 
   association [0..1] to /DMO/I_Agency            as _Agency        on $projection.AgencyID = _Agency.AgencyID
@@ -16,6 +15,9 @@ define root view entity Z_R_TRAVEL_LGL_01
       travel_id             as TravelID,
       agency_id             as AgencyID,
       customer_id           as CustomerID,
+      
+      //concat_with_space( _Customer.FirstName, _Customer.LastName, 1 ) as CustomerName,
+      
       begin_date            as BeginDate,
       end_date              as EndDate,
 
