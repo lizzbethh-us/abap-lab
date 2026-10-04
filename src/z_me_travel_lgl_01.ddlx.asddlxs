@@ -1,0 +1,55 @@
+@Metadata.layer: #CORE
+
+// 1. #CUSTOMER
+// 2.
+// ...
+// 5. #CORE  prioridad mas baja
+
+@UI: { headerInfo : { typeName: 'Travel', 
+                      typeNamePlural: 'Travels',
+                      title: { type :#STANDARD,
+                               value: 'TravelID' } },
+        presentationVariant: [{ sortOrder: [{by: 'TravelID',
+                                             direction : #DESC}],
+                                 visualizations: [{ type: #AS_LINEITEM }] }] }  //ESTA ES LA PLANTILLA
+annotate entity Z_C_TRAVEL_LGL_01
+    with 
+{
+    @UI.lineItem: [{ position: 10,
+                     importance: #HIGH,
+                     label: 'Travel ID' }]
+    TravelID;
+    
+    @UI.lineItem: [{ position: 20,
+                     importance: #HIGH }]
+    AgencyID;
+    
+    @UI.lineItem: [{ position: 30,
+                     importance: #HIGH }]
+    CustomerID;
+    
+    @UI.lineItem: [{ position: 40,
+                     importance: #MEDIUM }]
+    BeginDate;
+    
+    @UI.lineItem: [{ position: 50,
+                     importance: #MEDIUM}]
+    EndDate;
+    
+    @UI.lineItem: [{ position: 60,
+                     importance: #LOW}]
+    BookingFee;
+    
+    @UI.lineItem: [{ position: 70,
+                     importance: #HIGH }]
+    TotalPrice;
+    
+    @UI.lineItem: [{ position: 80,
+                     importance: #HIGH }]
+    CurrencyCode;
+    
+    @UI.lineItem: [{ position: 90,
+                     importance: #LOW }]
+    OverallStatus;
+    
+}
