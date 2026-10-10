@@ -2,6 +2,7 @@
 @EndUserText.label: 'Travel - Consumption (Projection entity)'
 @Metadata.ignorePropagatedAnnotations: true
 
+// habilitacion de los filtros de busqueda
 @Search.searchable: true
 @Metadata.allowExtensions: true
 
@@ -37,7 +38,8 @@ define root view entity Z_C_TRAVEL_LGL_01
       TotalPrice,
       CurrencyCode,
       Description,
-
+      
+      @ObjectModel.text.element: [ 'OverallStatusText' ]
       OverallStatus,
       _OverallStatus._Text.Text as OverallStatusText : localized,
       //_OverallStatus._Text[1: Language = $session.system_language].Text as OverallStatusText,
